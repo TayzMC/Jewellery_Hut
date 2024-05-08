@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ product.name }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>{{ product.name }}</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/products">Products</a></li>
+            <li><a href="/basket">Basket</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>Description</h2>
+            <p>{{ product.description }}</p>
+            <h2>Price: ${{ product.price }}</h2>
+            <form action="/add_to_basket/{{ product.id }}" method="POST">
+                <button type="submit">Add to Basket</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Jewelry Store. All rights reserved.</p>
+    </footer>
+</body>
+</html>

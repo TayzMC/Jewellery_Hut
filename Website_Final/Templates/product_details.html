@@ -1,0 +1,32 @@
+<!-- product_details.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='product_details.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Product Details</h1>
+        <div class="product-details content-section">
+            <div class="product-image">
+                <img src="{{ product.image_url }}" alt="{{ product.name }}">
+            </div>
+            <div class="product-description">
+                <h2>{{ product.name }}</h2>
+                <p class="description">{{ product.description }} </p>
+                <h2>Enviromental Impact </h2>
+                <p class="enviromental_impact">{{ product.enviromental_impact }} </p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+</body>
+</html>
+
+

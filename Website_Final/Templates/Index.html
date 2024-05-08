@@ -1,0 +1,28 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jewlery Hut</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='format.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Jewlery Hut</h1>
+        <div class="product-container">
+            {% for product in products %}
+                <div class="product">
+                    <img src="{{ product.image_url }}" alt="{{ product.name }}">
+                    <h2>{{ product.name }}</h2>
+                    <p>Price: ${{ product.price }}</p>
+                    <!-- Link to product details page with product name as part of URL path -->
+                    <a href="{{ url_for('product_details', product_name=product.name) }}"><button class="btn">View Details</button></a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
+
+
